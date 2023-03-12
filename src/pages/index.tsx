@@ -35,21 +35,36 @@ export default function Home() {
         <List href="/SeeMore" link="/" title="Iphones" /> */}
         <div className="flex w-screen items-center justify-center p-4">
           <div className=" grid w-full max-w-5xl grid-cols-1 place-items-center gap-8 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
-            {items.map((item, index) => {
-              return (
-                <Item
-                  key={index}
-                  item={{
-                    title: item?.title,
-                    compony: item?.compony,
-                    status: item?.status,
-                    prise: item?.prise,
-                    hot: item?.hot,
-                    images: item?.images,
-                  }}
-                />
-              );
-            })}
+            {items.map(
+              (
+                item: {
+                  title: string;
+                  compony: string;
+                  status: string;
+                  prise: number;
+                  hot: boolean;
+                  images: {
+                    public_id: string;
+                    url: string;
+                  }[];
+                },
+                index
+              ) => {
+                return (
+                  <Item
+                    key={index}
+                    item={{
+                      title: item?.title,
+                      compony: item?.compony,
+                      status: item?.status,
+                      prise: item?.prise,
+                      hot: item?.hot,
+                      images: item?.images,
+                    }}
+                  />
+                );
+              }
+            )}
           </div>
         </div>
       </main>

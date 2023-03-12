@@ -1,4 +1,3 @@
-///@ts-nocheck
 import Item from "@/components/Item";
 import { useRouter } from "next/router";
 import React from "react";
@@ -14,9 +13,9 @@ const Category = () => {
         </h1>
       </div>
       <div className="flex max-w-5xl flex-col flex-wrap items-center gap-8 pt-16 sm:flex-row sm:justify-center ">
-        {[1, 2, 3, 4, 5].map((i, index) => {
+        {/* {[1, 2, 3, 4, 5].map((i, index) => {
           return <Item key={index} />;
-        })}
+        })} */}
       </div>
     </div>
   );
