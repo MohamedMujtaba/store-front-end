@@ -1,3 +1,4 @@
+///@ts-nocheck
 import Item from "@/components/Item";
 import { useRouter } from "next/router";
 import React from "react";
