@@ -33,21 +33,36 @@ const List: React.FC<ListProps> = ({ href, link, title }) => {
         </div>
         <div className="flex gap-4 overflow-x-auto  scroll-smooth scrollbar-hide">
           {/* FIXME: TODO: add data fetch */}
-          {items.map((item, index) => {
-            return (
-              <Item
-                key={index}
-                item={{
-                  title: item?.title,
-                  compony: item?.compony,
-                  status: item?.status,
-                  prise: item?.prise,
-                  hot: item?.hot,
-                  images: item?.images,
-                }}
-              />
-            );
-          })}
+          {items.map(
+            (
+              item: {
+                title: string;
+                compony: string;
+                status: string;
+                prise: number;
+                hot: boolean;
+                images: {
+                  public_id: string;
+                  url: string;
+                }[];
+              },
+              index
+            ) => {
+              return (
+                <Item
+                  key={index}
+                  item={{
+                    title: item?.title,
+                    compony: item?.compony,
+                    status: item?.status,
+                    prise: item?.prise,
+                    hot: item?.hot,
+                    images: item?.images,
+                  }}
+                />
+              );
+            }
+          )}
         </div>
       </div>
     </div>
