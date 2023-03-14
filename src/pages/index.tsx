@@ -19,7 +19,7 @@ export default function Home() {
   const getData = async () => {
     try {
       const data = await axios.get(
-        "https://store-back-end-three.vercel.app/api/v1/item"
+        "https://store-back-end.vercel.app/api/v1/item"
       );
       setItems(data.data.items);
       console.log(data.data.items[0]);

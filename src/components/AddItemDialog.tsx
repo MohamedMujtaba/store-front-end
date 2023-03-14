@@ -45,7 +45,7 @@ export function AddItemDialog() {
 
     try {
       const res = await axios.post(
-        "https://store-back-end-three.vercel.app/api/v1/item",
+        "https://store-back-end.vercel.app/api/v1/item",
         {
           title,
           currentPrice: price,
