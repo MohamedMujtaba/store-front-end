@@ -32,6 +32,7 @@ const FilterComponent = ({ align }: { align?: "center" | "start" | "end" }) => {
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="compony">Compony</Label>
               <SelectComponent
+                onValueChange={() => {}}
                 className="col-span-2 h-8"
                 id="compony"
                 data={["Samsung", "Iphone", "Redmi"]}
@@ -41,6 +42,7 @@ const FilterComponent = ({ align }: { align?: "center" | "start" | "end" }) => {
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="status">Status</Label>
               <SelectComponent
+                onValueChange={() => {}}
                 className="col-span-2 h-8"
                 data={["New", "Used", "Refurbish"]}
                 placeholder="Status"

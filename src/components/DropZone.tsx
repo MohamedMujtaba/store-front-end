@@ -9,7 +9,7 @@ interface DropzoneProps {
 
 const Dropzone: React.FC<DropzoneProps> = ({ setImages }) => {
   const onDrop = useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: File[]) => {
       acceptedFiles.forEach((file: File) => {
         const reader = new FileReader();
 
