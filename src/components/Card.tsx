@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
         height={960}
         // crop="fill"
         className="h-60 rounded-t-lg object-contain"
-        src={item?.images[0].public_id}
+        src={item?.images[0]?.public_id}
         alt="Description of my image"
       />
       <span className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">
@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
       </span>
       <div className="mt-4 px-5 pb-5">
         <h5 className="text-xl font-semibold tracking-tight text-slate-900">
-          {item.title}
+          {item?.title}
         </h5>
 
         <div className="mt-2.5 mb-5 flex items-center">
@@ -96,9 +96,11 @@ const Card: React.FC<CardProps> = ({ item }) => {
         <div className="flex items-center justify-between">
           <p>
             <span className="text-3xl font-bold text-slate-900">
-              {formatter.format(Number(item?.price))} {"   "}
+              {item?.price.toLocaleString("en-US")} {"   "}
             </span>
-            <span className="text-sm text-red-400 line-through">$299</span>
+            <span className="text-sm text-red-400 line-through">
+              {formatter.format(Number(item?.price))}
+            </span>
           </p>
           {/* <a
             href="#"

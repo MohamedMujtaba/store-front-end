@@ -22,7 +22,6 @@ export default function Home() {
         "https://store-back-end.vercel.app/api/v1/item"
       );
       setItems(data.data.items);
-      console.log(data.data.items[0]);
     } catch (error) {
       console.log(error);
     }
