@@ -24,7 +24,7 @@ export function AddItemDialog() {
   const [price, setPrice] = useState<number>();
   const [compony, setCompony] = useState<string>("");
   const [status, setStatus] = useState<string>("");
-  const [images, setImages] = useState<string | ArrayBuffer | null[]>([]);
+  const [images, setImages] = useState<(string | ArrayBuffer | null)[]>([]);
   const [hot, setHot] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(true);
   console.log({
@@ -37,7 +37,9 @@ export function AddItemDialog() {
     active,
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     console.log("hi");
 
@@ -155,7 +157,12 @@ export function AddItemDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" onClick={handleSubmit}>
+          <Button
+            type="submit"
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+              handleSubmit(e)
+            }
+          >
             Save
           </Button>
         </DialogFooter>
